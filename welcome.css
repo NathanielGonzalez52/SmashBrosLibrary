@@ -1,0 +1,58 @@
+body {
+  font-weight: bold;
+  font-size: 140%;
+}
+
+.title {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.ball {
+  position: relative;
+  top: 3rem;
+  width: 533px;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: blue; */
+}
+
+.smash-ball {
+  max-width: 100%;
+  width: auto;
+}
+
+.find {
+  position: relative;
+  top: 3rem;
+  width: 533px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  /* background-color: blue; */
+}
+
+.add {
+  position: relative;
+  top: 5rem;
+  width: 533px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  /* background-color: blue; */
+}
+
+.enter {
+  font-weight: bold;
+  background-color: black;
+  color: #FFFFFF;
+  /* border-color: #D3AF37; */
+  border-radius: 12px;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+}
+
+.enter:hover {
+  cursor: pointer;
+  font-size: 65%;
+}
