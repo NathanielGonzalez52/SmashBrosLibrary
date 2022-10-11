@@ -1,0 +1,11 @@
+{
+  "name": "smashbrosfinder",
+  "version": "1.0.0",
+  "description": "Smash Bros Fighter Library ",
+  "main": "add.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
