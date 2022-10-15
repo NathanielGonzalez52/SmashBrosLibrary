@@ -7,9 +7,18 @@ const app = express();
 //
 
 app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/welcome.html");
+});
+
+
+//may be moved
+app.post("/", function(req, res) {
+  var gamerTag = req.body.gamerTag;
+  var fighter1 = req.body.fighter1;
+  var fighter2 = req.body.fighter2;
 });
 
 app.listen(3000, function() {
