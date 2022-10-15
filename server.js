@@ -26,15 +26,15 @@ app.listen(3000, function() {
 })
 
 
-const data = {
-  fighter: [
-    {
-      gamerTag: username,
-      fighterOne: fighter1,
-      fighterTwo: fighter2
-  }
-]
-};
+// const data = {
+//   fighter: [
+//     {
+//       gamerTag: username,
+//       fighterOne: fighter1,
+//       fighterTwo: fighter2
+//   }
+// ]
+// };
 
 // Barebones express server
 // const express = require("express");
