@@ -21,10 +21,6 @@ app.post("/add.html", function(req, res){
   var player1 = req.body.mainOne;
   var player2 = req.body.mainTwo;
   var record = req.body.record;
-  // console.log(gamerTag);
-  // console.log(fighter1);
-  // console.log(fighter2);
-  // console.log(record);
 });
 
 app.post("/find.html", function(req, res){
@@ -55,22 +51,7 @@ fs.appendFile("SmashBrosLibrary.txt", jsonData, (err) => {
   }
   })
 })
-  // Node.js program to demonstrate the
-// fs.appendFile() method
 
-// Import the filesystem module
-// const fs = require('fs');
-//
-// // Get the file contents before the append operation
-// console.log("\nFile Contents of file before append:",
-
-// else {
-// 	// Get the file contents after the append operation
-// 	console.log("\nFile Contents of file after append:",
-// 	fs.readFileSync("example_file.txt", "utf8"));
-// }
-// });
-//
 app.post("/", function(req, res){
   res.sendFile(__dirname + "/welcome.html");
 });
