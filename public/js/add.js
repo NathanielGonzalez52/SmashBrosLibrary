@@ -13,7 +13,16 @@ entry.addEventListener("click", ()=> {
 
     "The following will be added to the library: \n\n" + "Gamertag: " + gamerTag + "\nPlayer One: " + playerOne + "\nPlayer Two: " + playerTwo + "\nWin/Loss: " + record + "\nIs this correct?"
   );
-  console.log(result);
+  if (result == false) {
+    var added = document.getElementsByClassName("add")[0];
+    added.action = "";
+    alert("Your entry was not added.");
+  }
+  else if (result == true) {
+    console.log("The information was added");
+    // var added = document.getElementsByClassName("add")[0];
+    // added.action = "/add.html";
+  }
 })
 
 back.addEventListener("click", ()=> {
