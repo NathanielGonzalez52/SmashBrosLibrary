@@ -19,10 +19,10 @@ app.post("/add.html", function(req, res){
   var fighter1 = req.body.mainOne;
   var fighter2 = req.body.mainTwo;
   var record = req.body.record;
-  console.log(gamerTag);
-  console.log(fighter1);
-  console.log(fighter2);
-  console.log(record);
+  // console.log(gamerTag);
+  // console.log(fighter1);
+  // console.log(fighter2);
+  // console.log(record);
 });
 
 app.post("/find.html", function(req, res){
