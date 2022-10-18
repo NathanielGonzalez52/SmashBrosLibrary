@@ -20,8 +20,9 @@ entry.addEventListener("click", ()=> {
   }
   else if (result == true) {
     console.log("The information was added");
-    // var added = document.getElementsByClassName("add")[0];
-    // added.action = "/add.html";
+
+    var added = document.getElementsByClassName("add")[0];
+    added.action = "/success.html";
   }
 })
 
