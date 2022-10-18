@@ -38,7 +38,7 @@ app.post("/success.html", function(req,res) {
   var player1 = req.body.mainOne;
   var player2 = req.body.mainTwo;
   var record = req.body.record;
-  data: [
+  const data = [
   {
     gamer_tag: gamerTag,
     fighers: {
@@ -54,7 +54,7 @@ fs.appendFile("SmashBrosLibrary.txt", jsonData, (err) => {
   	console.log(err);
   }
   })
-}
+})
   // Node.js program to demonstrate the
 // fs.appendFile() method
 
