@@ -15,7 +15,7 @@ entry.addEventListener("click", ()=> {
   );
   if (result == false) {
     var added = document.getElementsByClassName("add")[0];
-    added.action = "";
+    // added.action = "";
     alert("Your entry was not added.");
   }
   else if (result == true) {

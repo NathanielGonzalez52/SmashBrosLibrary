@@ -1,0 +1,1 @@
+[{"gamer_tag":"I","fighters":{"player_one":"Link","player_two":"Zelda"}},{"gamer_tag":"TrumpSama","fighters":{"player_one":"Snake","player_two":"Hero"}}]
