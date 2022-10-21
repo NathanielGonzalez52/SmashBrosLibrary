@@ -82,7 +82,7 @@ app.post("/reveal.html", function(req, res) {
       if (gamerTag === JSON.parse(data)[i].gamer_tag) {
         found="true";
         // console.log(data);
-        res.write("Yes! We have fought them before. They played as " + JSON.parse(data)[i].fighters.player_one + " and " + JSON.parse(data)[i].fighters.player_two + ". We got a " + JSON.parse(data)[i].record + " against them.")
+        res.write("<h1>Yes! We have fought them before. They played as " + JSON.parse(data)[i].fighters.player_one + " and " + JSON.parse(data)[i].fighters.player_two + ". We got a " + JSON.parse(data)[i].record + " against them.")
         res.send();
       }
 }

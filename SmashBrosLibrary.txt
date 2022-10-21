@@ -1,1 +1,1 @@
-[{"gamer_tag":"Test","fighters":{"player_one":"Link","player_two":"Mario"}},{"gamer_tag":"TrumpSama","fighters":{"player_one":"Mario","player_two":"Link"}},{"gamer_tag":"I","fighters":{"player_one":"Ike","player_two":"Snake"}},{"gamer_tag":"Kobalt","fighters":{"player_one":"Mario","player_two":"Pac-Man"}}]
+[{"gamer_tag":"TrumpSama","fighters":{"player_one":"Zero Suit Samus","player_two":"Ike"},"record":"W"}]
