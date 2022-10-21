@@ -19,39 +19,11 @@ app.get("/", function(req, res){
 // Catches website name to be moved
 app.post("/add.html", function(req, res) {
   res.sendFile(__dirname + "/add.html");
-  var gamerTag = req.body.gamerTag;
-  var player1 = req.body.mainOne;
-  var player2 = req.body.mainTwo;
-  var record = req.body.record;
-});
-
-app.post("/find.html", function(req, res) {
-  res.sendFile(__dirname + "/find.html");
-  var gamerTag = req.body.gamerTag;
-  // popup.alert({
-  //   content: "Just testing"
-  // });
-  // console.log(gamerTag);
-
-  fs.readFile('SmashBrosLibrary.txt','utf-8', (err, data) => {
-    if (err) {
-      console.log("ERROR");
-    }
-    console.log(JSON.parse(data)[0]);
-    for (var i=0; i < JSON.parse(data).length; i++) {
-      console.log(gamerTag);
-      console.log(JSON.parse(data)[0].gamer_tag);
-      if (gamerTag === JSON.parse(data)[i].gamer_tag) {
-        console.log("Yes, it exists!");
-      }
-    // console.log(JSON.parse(data)[0]);
-}
-  })
 });
 
 app.post("/success.html", function(req,res) {
   res.sendFile(__dirname + "/success.html");
-  console.log("hello");
+  // console.log("hello");
   var gamerTag = req.body.gamerTag;
   var player1 = req.body.mainOne;
   var player2 = req.body.mainTwo;
@@ -62,7 +34,9 @@ app.post("/success.html", function(req,res) {
     fighters: {
       player_one: player1,
       player_two: player2
-    }
+    },
+    record: record
+
   }
 
   library.push(data);
@@ -75,6 +49,55 @@ app.post("/success.html", function(req,res) {
     }
     })
   })
+
+app.post("/find.html", function(req, res) {
+  res.sendFile(__dirname + "/find.html");
+//   var gamerTag = req.body.gamerTag;
+//
+//   fs.readFile('SmashBrosLibrary.txt','utf-8', (err, data) => {
+//     if (err) {
+//       console.log("ERROR");
+//     }
+//     // console.log(JSON.parse(data)[0]);
+//     for (var i=0; i < JSON.parse(data).length; i++) {
+//       if (gamerTag === JSON.parse(data)[i].gamer_tag) {
+//         console.log("Got 'em");
+//       }
+// }
+//   })
+});
+
+app.post("/reveal.html", function(req, res) {
+  var gamerTag = req.body.gamerTag;
+  var found="false";
+
+
+
+  fs.readFile('SmashBrosLibrary.txt','utf-8', (err, data) => {
+    if (err) {
+      console.log("ERROR");
+    }
+    // console.log(JSON.parse(data)[0]);
+    for (var i=0; i < JSON.parse(data).length; i++) {
+      if (gamerTag === JSON.parse(data)[i].gamer_tag) {
+        found="true";
+        // console.log(data);
+        res.write("Yes! We have fought them before. They played as " + JSON.parse(data)[i].fighters.player_one + " and " + JSON.parse(data)[i].fighters.player_two + ". We got a " + JSON.parse(data)[i].record + " against them.")
+        res.send();
+      }
+}
+  })
+  // if (found) {
+  //
+  // }
+  //
+  // else if (found!=true) {
+  //   res.write("<h1>Doesn't look like these bastards are in the library.</h1>")
+  // }
+  // res.send();
+  // res.sendFile(__dirname + "/reveal.html");
+
+})
 
 app.post("/", function(req, res){
   res.sendFile(__dirname + "/welcome.html");
