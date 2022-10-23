@@ -1,0 +1,1 @@
+[{"gamer_tag":"TrumpSama","fighters":{"player_one":"Link","player_two":"Snake"},"record":"W"},{"gamer_tag":"I","fighters":{"player_one":"Ike","player_two":"Snake"},"record":"W"}]
