@@ -1,0 +1,9 @@
+.another {
+  font-weight: bold;
+  background-color: black;
+  color: #FFFFFF;
+  /* border-color: #D3AF37; */
+  border-radius: 12px;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+}

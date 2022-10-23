@@ -1,3 +1,22 @@
+
+//
+// const express = require('express');
+//
+// // Initialize App
+// const app = express();
+//
+// // Assign route
+// app.use('/', (req, res, next) => {
+//   res.render('index.pug', { name: 'John Doe', age: 21 });
+// });
+//
+// // Start server
+// app.listen(5000, () => {
+//   console.log('App listening on port 5000');
+// });
+
+
+
 // const fs = require('browserify-fs');
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -71,8 +90,6 @@ app.post("/reveal.html", function(req, res) {
   var gamerTag = req.body.gamerTag;
   var found="false";
 
-
-
   fs.readFile('SmashBrosLibrary.txt','utf-8', (err, data) => {
     if (err) {
       console.log("ERROR");
@@ -81,22 +98,17 @@ app.post("/reveal.html", function(req, res) {
     for (var i=0; i < JSON.parse(data).length; i++) {
       if (gamerTag === JSON.parse(data)[i].gamer_tag) {
         found="true";
-        // console.log(data);
-        res.write("<h1>Yes! We have fought them before. They played as " + JSON.parse(data)[i].fighters.player_one + " and " + JSON.parse(data)[i].fighters.player_two + ". We got a " + JSON.parse(data)[i].record + " against them.")
+        var message = "We have fought them before. They played as " + JSON.parse(data)[i].fighters.player_one + " and " + JSON.parse(data)[i].fighters.player_two + ". We got a " + JSON.parse(data)[i].record + " against them."
+        // console.log(message);
+        res.render('index.pug', { message: message});
+      }
+      else {
+        res.write("<h1>Doesn't look like we've fought these guys before.</h1>");
         res.send();
       }
 }
   })
-  // if (found) {
-  //
-  // }
-  //
-  // else if (found!=true) {
-  //   res.write("<h1>Doesn't look like these bastards are in the library.</h1>")
-  // }
-  // res.send();
   // res.sendFile(__dirname + "/reveal.html");
-
 })
 
 app.post("/", function(req, res){

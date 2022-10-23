@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+
+  link(rel='stylesheet', type='text/css', href='css/pug.css')
+  head
+  title= 'SmashBrosLibrary'
+  body
+    div.userMessage
+      h1 #{message}
+    div.cont
+      form(action='/welcome.html', method='post')
+        button.enter
+          p Home?
