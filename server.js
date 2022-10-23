@@ -1,22 +1,3 @@
-
-//
-// const express = require('express');
-//
-// // Initialize App
-// const app = express();
-//
-// // Assign route
-// app.use('/', (req, res, next) => {
-//   res.render('index.pug', { name: 'John Doe', age: 21 });
-// });
-//
-// // Start server
-// app.listen(5000, () => {
-//   console.log('App listening on port 5000');
-// });
-
-
-
 // const fs = require('browserify-fs');
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -114,11 +95,9 @@ app.post("/reveal.html", function(req, res) {
 app.post("/", function(req, res){
   res.sendFile(__dirname + "/welcome.html");
 });
+//Dynamic port that heroku gets to choose
 
-
-
-//may be moved
-
-app.listen(3000, function() {
+// || allows hosting on 3000 concurrently 
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server is running on port 3000");
 });
