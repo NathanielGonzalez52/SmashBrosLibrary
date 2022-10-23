@@ -92,12 +92,16 @@ app.post("/reveal.html", function(req, res) {
   // res.sendFile(__dirname + "/reveal.html");
 })
 
-app.post("/", function(req, res){
+// app.post("/", function(req, res){
+//   res.sendFile(__dirname + "/welcome.html");
+// });
+
+app.post("/welcome.html", function(req, res){
   res.sendFile(__dirname + "/welcome.html");
 });
 //Dynamic port that heroku gets to choose
 
-// || allows hosting on 3000 concurrently 
+// || allows hosting on 3000 concurrently
 app.listen(process.env.PORT || 3000, function() {
   console.log("Server is running on port 3000");
 });
